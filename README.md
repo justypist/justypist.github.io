@@ -6,4 +6,4 @@
 
 ## [Git](./git/index.md)
 
-## [Proxy](./proxy/rpi.pac)
+## [Proxy](./proxy/index.md)
