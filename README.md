@@ -5,3 +5,5 @@
 ## [Windows](./windows/index.md)
 
 ## [Git](./git/index.md)
+
+## [Proxy](./proxy/rpi.pac)
