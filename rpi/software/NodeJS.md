@@ -1,10 +1,10 @@
 # Node.js
 
 > [Index of /node/latest-v16.x/ (ustc.edu.cn)](https://mirrors.ustc.edu.cn/node/latest-v16.x/)
-> 
+>
 
 > [NPM 镜像使用帮助 - LUG @ USTC](https://lug.ustc.edu.cn/wiki/mirrors/help/npm/)
-> 
+>
 
 ```bash
 # 安装lts版本node可执行文件
@@ -25,7 +25,7 @@ export PATH=\$PATH:\$HOME/.local/nodejs/bin
 source $HOME/.bashrc
 
 # NPM镜像
-npm config --location=global set https://npmreg.proxy.ustclug.org/
+npm config --location=global set registry https://npmreg.proxy.ustclug.org/
 
 # 更新npm & 安装pnpm
 npm install --location=global npm pnpm
