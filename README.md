@@ -9,3 +9,5 @@
 ## [Proxy](./proxy/index.md)
 
 ## [Typescript](./typescript/index.md)
+
+## [Shortcut](./shortcut/index.md)

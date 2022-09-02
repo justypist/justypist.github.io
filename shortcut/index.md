@@ -1,0 +1,3 @@
+# Shortcut
+
+## [Chrome](./chrome.md)
