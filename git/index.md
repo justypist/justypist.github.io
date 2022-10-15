@@ -1,6 +1,6 @@
 # Git
 
-## 记住面膜
+## 记住密码
 ```bash
 git config --global credential.helper store
 ```
