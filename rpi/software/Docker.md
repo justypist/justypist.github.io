@@ -56,6 +56,7 @@ superng6/aria2
 ```bash
 docker run -it -d \
 --name samba \
+--restart unless-stopped \
 -p 139:139 \
 -p 445:445 \
 -v <PathOfHost>:<PathOfContainer> \
@@ -65,6 +66,18 @@ dperson/samba -p \
 -u "<UserName2>;<Password2>" \
 -s "<ShareName>;<PathOfContainer>;yes;no;yes;all" \
 -s "<ShareName2>;<PathOfContainer2>;yes;no;yes;all"
+```
+
+``` bash
+docker run -it -d \
+--restart unless-stopped \
+--name samba \
+-p 139:139 \
+-p 445:445 \
+-v /mnt:/mnt \
+dperson/samba -p \
+-u "yongx;yongx-passwd" \
+-s "mnt;/mnt;yes;no;yes;all;yongx;yongx"
 ```
 
 ### 安装Mariadb (目前存在创建的用户没有权限创建数据库的问题 还需要解决)
