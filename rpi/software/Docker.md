@@ -48,6 +48,26 @@ docker run -d \
 superng6/aria2
 ```
 
+```bash
+docker run -d \
+--name aria2 \
+--restart unless-stopped \
+-v /mnt/.aria2:/downloads \
+-v /home/user/.config/aria2:/config \
+-e PUID=1000 \
+-e PGID=1000 \
+-e SECRET=19981023@Xy \
+-e CACHE=1024M \
+-e PORT=6800 \
+-e WEBUI=true \
+-e WEBUI_PORT=10000 \
+-e BTPORT=32516 \
+-e UT=true \
+-e RUT=true \
+--net host \
+superng6/aria2
+```
+
 ### 安装Samba
 
 > [dperson/samba - Docker Image | Docker Hub](https://hub.docker.com/r/dperson/samba/)
