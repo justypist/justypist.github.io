@@ -22,7 +22,7 @@ sudo usermod -aG docker $USER
 ### 安装Aria2
 
 > [superng6/aria2 - Docker Image | Docker Hub](https://hub.docker.com/r/superng6/aria2#!)
-> 
+>
 
 ```bash
 docker run -d \
@@ -71,7 +71,7 @@ superng6/aria2
 ### 安装Samba
 
 > [dperson/samba - Docker Image | Docker Hub](https://hub.docker.com/r/dperson/samba/)
-> 
+>
 
 ```bash
 docker run -it -d \
@@ -103,7 +103,7 @@ dperson/samba -p \
 ### 安装Mariadb (目前存在创建的用户没有权限创建数据库的问题 还需要解决)
 
 > [Mariadb - Official Image | Docker Hub](https://hub.docker.com/_/mariadb/)
-> 
+>
 
 ```bash
 docker run -d \
@@ -118,7 +118,7 @@ mariadb:latest
 ### 安装ddns-go
 
 > [jeessy/ddns-go - Docker Image | Docker Hub](https://hub.docker.com/r/jeessy/ddns-go)
-> 
+>
 
 ```bash
 docker run -d \
@@ -134,18 +134,18 @@ jeessy/ddns-go
 ### 安装Clash & yacd
 
 - 获取Clash订阅
-    
+
     > [用户中心 — 星梦数据 (stardream.xyz)](https://stardream.xyz/user)
-    > 
-    > 
+    >
+    >
     > 复制Clash订阅, 将订阅链接中的内容保存到<ClashDirPath>/config.yaml
-    > 
+    >
     > [辣条 (latiao.club)](https://latiao.club/#/dashboard)
-    > 
+    >
 - 安装Clash
-    
+
     > [clash as a daemon · Dreamacro/clash Wiki (github.com)](https://github.com/Dreamacro/clash/wiki/clash-as-a-daemon#docker)
-    > 
+    >
 
 ```bash
 docker run -d \
@@ -160,10 +160,10 @@ ghcr.io/dreamacro/clash
 ```
 
 - 安装yacd用于通过web的方式管理clash
-    
+
     > [p3terx/yacd - Docker Image | Docker Hub](https://hub.docker.com/r/p3terx/yacd)
-    > 
-    
+    >
+
     ```bash
     docker run -d \
     --name yacd \
@@ -172,7 +172,7 @@ ghcr.io/dreamacro/clash
     -p 9091:9091 \
     p3terx/yacd
     ```
-    
+
 - 打开yacd管理页面(http://<ip>:9091), 添加一个API地址 http://<ip>:9090
 - 通过配置文件/yacd打开AllowLan开关, 即可在需要的机器上设置代理, 默认情况下7890代理http 7891代理socks 具体使用方法可以查询clash相关使用说明
 
@@ -193,8 +193,28 @@ portainer/portainer-ce
 ### 安装Gogs
 
 > [https://hub.docker.com/r/gogs/gogs](https://hub.docker.com/r/gogs/gogs)
-> 
+>
 
 ```bash
 docker run -d --name=gogs --restart=unless-stopped -p 13000:3000 -v /var/local/gogs:/data gogs/gogs-rpi
+```
+
+### Jellyfin
+```bash
+# render group id
+cat group | grep render
+
+docker run -d  \
+--name jellyfin \
+--group-add=106 \
+# bind gpu
+--device /dev/dri/renderD128:/dev/dri/renderD128 \
+--device /dev/dri/card0:/dev/dri/card0 \
+--net=host \
+--volume /home/user/.config/jellyfin/config:/config \
+--volume /home/user/.config/jellyfin/cache:/cache \
+# real media path
+--volume /home/user/.config/jellyfin/media:/media \
+--restart=unless-stopped \
+jellyfin/jellyfin
 ```
