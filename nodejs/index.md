@@ -13,11 +13,11 @@
 #apt-get install -y nodejs
 
 # 通过镜像地址下载并解压nodejs二进制
-wget https://mirrors.ustc.edu.cn/node/latest-v16.x/node-v16.15.0-linux-arm64.tar.gz
-tar -xvf node-v16.15.0-linux-arm64.tar.gz
-rm node-v16.15.0-linux-arm64.tar.gz
+wget https://mirrors.ustc.edu.cn/node/v16.9.1/node-v16.9.1-linux-arm64.tar.gz
+tar -xvf node-v16.9.1-linux-arm64.tar.gz
+rm node-v16.9.1-linux-arm64.tar.gz
 mkdir -p $HOME/.local
-mv node-v16.15.0-linux-arm64 $HOME/.local/nodejs
+mv node-v16.9.1-linux-arm64 $HOME/.local/nodejs
 echo -e "\
 # nodejs
 export PATH=\$PATH:\$HOME/.local/nodejs/bin
