@@ -1,6 +1,6 @@
 # Node.js
 
-> [Index of /node/latest-v16.x/ (ustc.edu.cn)](https://mirrors.ustc.edu.cn/node/latest-v16.x/)
+> [Index of /node/latest-v18.12.1/ (ustc.edu.cn)](https://mirrors.ustc.edu.cn/node/v18.12.1/)
 >
 
 > [NPM 镜像使用帮助 - LUG @ USTC](https://lug.ustc.edu.cn/wiki/mirrors/help/npm/)
@@ -13,11 +13,11 @@
 #apt-get install -y nodejs
 
 # 通过镜像地址下载并解压nodejs二进制
-wget https://mirrors.ustc.edu.cn/node/v16.9.1/node-v16.9.1-linux-x64.tar.gz
-tar -xvf node-v16.9.1-linux-x64.tar.gz
-rm node-v16.9.1-linux-x64.tar.gz
+wget https://mirrors.ustc.edu.cn/node/v18.12.1/node-v18.12.1-linux-x64.tar.gz
+tar -xvf node-v18.12.1-linux-x64.tar.gz
+rm node-v18.12.1-linux-x64.tar.gz
 mkdir -p $HOME/.local
-mv node-v16.9.1-linux-x64 $HOME/.local/nodejs
+mv node-v18.12.1-linux-x64 $HOME/.local/nodejs
 echo -e "\
 # nodejs
 export PATH=\$PATH:\$HOME/.local/nodejs/bin
